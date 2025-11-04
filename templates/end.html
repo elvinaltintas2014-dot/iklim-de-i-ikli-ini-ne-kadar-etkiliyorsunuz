@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../static/css/style.css"> 
+  <title>İKLİM DEĞİŞİKLİĞİNİ NE KADAR ETKİLİYORSUNUZ KADA</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__text">
+      <h1>HEMEN HESAPLIYALIM!</h1>
+    </div>
+      <p>!</p>
+    </div>
+  </header>
+  <main>
+    {% block content %}
+    <h2 class="main__title main__title--margin">İklim değişikliğini ne kadar etkilediğiniz:</h2>
+    <div class="main__rez" id="end">
+        {%if result <= 150%}
+        <img class="rez__img" src="../../static/img/planet_good.png" alt="">
+        <span>Sonucunuz {{result}} %</span>
+        <span>İklim değişikliğini çok etkilemiyorsunuz</span>
+        {%elif result > 150 and result < 300%}
+        <img class="rez__img" src="../../static/img/planet_medium.jpg" alt="">
+        <span>Sonucunuz {{result}} %</span>
+        <span>iklim değişikliğini orta derecede etkiliyorsunuz</span>
+         <a href="/form">tıklayınız...</a> 
+        {%elif result >= 300%}
+        <span>iklim değişikliğini çok etkiliyorsunuz daha iyi bir dünya için
+        
+        <img class="rez__img" src="../../static/img/planet_bad.jpg" alt="">
+        <span>Sonucunuz {{result}} %</span>
+        <span>Evınızın enerji verimliliği ortalamadan düşüktür!</span>
+        {%endif%}
+        <span>Evinizin enerji verimliliğinin düşük durumda olduğunu görüyoruz. çevreyi korumak ve daha iyi bir dünya için
+        <a href="/form">taklayınız...</a> 
+    </div>
+    {% endblock %}
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>
